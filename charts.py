@@ -47,9 +47,17 @@ def bar():
     plt.title("Bar Chart")
     plt.show()
 
-
+# So far, this code can't handle functions with more than one variable and non-simple functions (like sin(x)).
 def simple():
-    pass
+    x = np.linspace(-5, 5, 50)
+    y = input("Enter a simple function to plot: (e.g. x**2 + 2*x + 1):\n")
+    y = eval(y)
+    plt.plot(x, y, color = palette[0])
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title("Simple Function Plot")
+    plt.show()
+
     
 
 # def start_input():
