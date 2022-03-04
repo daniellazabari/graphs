@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+palette = ['#558B6E', '#88A09E', '#704C5E', '#B88C9E', '#F1C8DB', '#558B6E', '#88A09E', '#704C5E', '#B88C9E', '#F1C8DB']
 
 def contour():
     pass
@@ -20,14 +21,32 @@ def scatter():
         print("Error! You must enter the same amount of x and y values")
         return
     
-    plt.scatter(x, y)
+    plt.scatter(x, y, color = palette)
     plt.xlabel("x")
     plt.ylabel("y")
     plt.title("Scatter Plot")
     plt.show()
     
 def bar():
-    pass
+    labels_input = input("Enter up to ten labels: (different values should be seperated with ','):\n")
+    values_input = input("Enter up to ten bar hights: (different values should be seperated with ','):\n")
+
+    labels = [i for i in labels_input.split(',')]
+    values = [float(i) for i in values_input.split(',')]
+
+    if len(labels) > 10 or len(values) > 10:
+        print("Error! You must enter up to 10 values")
+    
+    if len(labels) != len(values):
+        print("Error! You must enter the same amount of labels and values")
+    
+    plt.bar(labels, values, color = palette)
+
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title("Bar Chart")
+    plt.show()
+
 
 def simple():
     pass
