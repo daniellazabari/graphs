@@ -3,8 +3,25 @@ import numpy as np
 
 palette = ['#558B6E', '#88A09E', '#704C5E', '#B88C9E', '#F1C8DB', '#558B6E', '#88A09E', '#704C5E', '#B88C9E', '#F1C8DB']
 
-def contour():
-    pass
+def pie():
+
+    labels_input = input("Enter up to ten labels: (different values should be seperated with ','):\n")
+    values_input = input("Enter the integer size for each label: (different sizes should be seperated with ','):\n")
+
+    labels = [str(i) for i in labels_input.split(',')]
+    values = [int(i) for i in values_input.split(',')]
+
+    if len(labels) > 10 or len(values) > 10:
+        print("Error! You must enter up to 10 values")
+    
+    if len(labels) != len(values):
+        print("Error! You must enter the same amount of labels and sizes")
+    
+    fig1,ax1 = plt.subplots()
+    ax1.pie(values, labels=labels, startangle=90, colors=palette, autopct='%1.1f%%')
+    ax1.axis('equal') # Ensure that the pie is drawn as a circle
+    plt.show()
+
 
 def scatter():
     x_vals = input("Enter up to ten x values: (different values should be seperated with ','):\n")
@@ -29,7 +46,7 @@ def scatter():
     
 def bar():
     labels_input = input("Enter up to ten labels: (different values should be seperated with ','):\n")
-    values_input = input("Enter up to ten bar hights: (different values should be seperated with ','):\n")
+    values_input = input("Enter the bar hights: (different values should be seperated with ','):\n")
 
     labels = [i for i in labels_input.split(',')]
     values = [float(i) for i in values_input.split(',')]

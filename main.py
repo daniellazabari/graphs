@@ -1,7 +1,8 @@
+from matplotlib.pyplot import pie
 from charts import *
 
 user_menu = """ Please choose from the following options:
-- Enter 'c' to chart a Contour plot
+- Enter 'p' to chart a Pie chart
 - Enter 's' to chart a Scatter plot
 - Enter 'b' to chart a Bar plot
 - Enter 'f' to chart a simple function plot
@@ -13,8 +14,8 @@ while True:
     if user_selection == 'q':
         break
     
-    elif user_selection == 'c':
-        contour()
+    elif user_selection == 'p':
+        pie()
     
     elif user_selection == 's':
         scatter()
