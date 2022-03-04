@@ -6,14 +6,18 @@ def contour():
     pass
 
 def scatter():
-    x_vals = input("Enter ten x values: (different values should be seperated with ','):\n")
-    y_vals = input("Enter ten x values: (different values should be seperated with ','):\n")
+    x_vals = input("Enter up to ten x values: (different values should be seperated with ','):\n")
+    y_vals = input("Enter up to ten x values: (different values should be seperated with ','):\n")
 
     x = [float(i) for i in x_vals.split(',')]
     y = [float(i) for i in y_vals.split(',')]
 
-    if len(x) != 10 or len(y) != 10:
-        print("Error! You must enter 10 values")
+    if len(x) > 10 or len(y) > 10:
+        print("Error! You must enter up to 10 values")
+        return
+    
+    if len(x) != len(y):
+        print("Error! You must enter the same amount of x and y values")
         return
     
     plt.scatter(x, y)
@@ -22,7 +26,6 @@ def scatter():
     plt.title("Scatter Plot")
     plt.show()
     
-
 def bar():
     pass
 
