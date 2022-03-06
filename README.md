@@ -11,8 +11,8 @@ The program visualizes data as:
 The program uses matplotlib and numpy
 
 ## Useful Links
-- [matplotlib] (https://matplotlib.org/stable/index.html)
-- [numpy] (https://numpy.org)
+- [matplotlib](https://matplotlib.org/stable/index.html)
+- [numpy](https://numpy.org)
 
 ## Set Up
 1. Clone the repository
